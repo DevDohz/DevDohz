@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://api-platform.com"><img src="https://api-platform.com/logo-250x250.png" alt="API Platform" \></a>
-  <img src="/pwa/public/OJ-Logo foncé-250x250.png" alt="Open Jujitsu - Back" \>
+  <a href="https://www.openjujitsu.fr"><img src="/pwa/public/OJ-Logo foncé-250x250.png" alt="Open Jujitsu - Back" \></a>
 </h1>
 
 API Platform is a next-generation web framework designed to easily create API-first projects without compromising extensibility
