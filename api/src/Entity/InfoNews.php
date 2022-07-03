@@ -31,9 +31,9 @@ class InfoNews
     /**
      * Date de validité : (vide = no limite de temps)
      */
-    #[ORM\Column]
+    #[ORM\Column(type: "datetime")]
     #[Assert\NotBlank]
-    public ?\DateTimeImmutable $dateValidite = null;
+    public ?\DateTime $dateValidite = null;
     
     /**
      * Text du Lien
@@ -54,7 +54,7 @@ class InfoNews
     public bool $lienIsTargetBlank = false;
 
 
-    public function getId(): ?int
+    public function getIdInfoNews(): ?int
     {
         return $this->idInfoNews;
     }

@@ -138,3 +138,13 @@ WORKDIR /srv/api
 COPY --from=api_platform_caddy_builder /usr/bin/caddy /usr/bin/caddy
 COPY --from=api_platform_php /srv/api/public public/
 COPY docker/caddy/Caddyfile /etc/caddy/Caddyfile
+
+# To add Xdebug 
+FROM api_platform_php as api_platform_php_dev
+
+ARG XDEBUG_VERSION=3.1.3
+RUN set -eux; \
+ apk add --no-cache --virtual .build-deps $PHPIZE_DEPS; \
+ pecl install xdebug-$XDEBUG_VERSION; \
+ docker-php-ext-enable xdebug; \
+ apk del .build-deps

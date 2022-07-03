@@ -1,0 +1,8 @@
+# api/fixtures/books.yaml
+App\Entity\InfoNews:
+    infoNews_{1..100}:
+      description: <text()>
+      dateValidite: <dateTime()>
+      lienText: <sentence(10)>
+      lienURL: <text()>
+      lienIsTargetBlank: false
