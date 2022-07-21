@@ -1,5 +1,5 @@
 api_platform:
-    title: Hello API Platform
+    title: Hello OJ API Platform
     version: 1.0.0
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
@@ -14,3 +14,5 @@ api_platform:
         stateless: true
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
+    formats:
+        jsonld: ['application/ld+json']
