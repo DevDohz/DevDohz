@@ -37,7 +37,7 @@ class InfoNews
     /**
      * Date de validité : (vide = no limite de temps)
      */
-    #[ORM\Column(type: 'datetime', nullable: true)]
+    #[ORM\Column(type: 'datetime')]
     private $dateValidite;
 
     /**
