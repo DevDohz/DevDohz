@@ -6,3 +6,8 @@ App\Entity\InfoNews:
       lienText: <sentence(10)>
       lienURL: <text()>
       lienIsTargetBlank: false
+
+    infoNews_delete:
+      description: '27 Aout 2022 : Journée Portes ouvertes au Dojo.'
+      dateValidite: <dateTime()>
+      lienText: 'LienTextUniquePourTest'

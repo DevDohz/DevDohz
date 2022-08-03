@@ -104,12 +104,12 @@ class InfoNews
         return $this;
     }
 
-    public function getLienText(): string
+    public function getLienText(): ?string
     {
         return $this->lienText;
     }
 
-    public function setLienText(string $lienText): self
+    public function setLienText(?string $lienText): self
     {
         $this->lienText = $lienText;
 

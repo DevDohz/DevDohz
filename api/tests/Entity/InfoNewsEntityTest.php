@@ -5,6 +5,7 @@ namespace App\Tests\Entity;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
 use Hautelook\AliceBundle\PhpUnit\RefreshDatabaseTrait;
 use App\Entity\InfoNews;
+use Doctrine\SqlFormatter\SqlFormatter;
 use Symfony\Component\Console\Output\OutputInterface;
 // use DateTime;
 // use phpDocumentor\Reflection\Types\Null_;
@@ -41,9 +42,6 @@ class InfoNewsEntityTest extends ApiTestCase
 
         // Because test fixtures are automatically loaded between each test, you can assert on them
         $this->assertCount(30, $response->toArray()['hydra:member']);
-
-        // Asserts that the returned JSON is validated by the JSON Schema generated for this resource by API Platform
-        // This generated JSON Schema is also used in the OpenAPI spec!
         $this->assertMatchesResourceCollectionJsonSchema(InfoNews::class);
     }
 
@@ -80,7 +78,7 @@ class InfoNewsEntityTest extends ApiTestCase
         // Test la création d'une InfoNews
         $response = static::createClient()->request('POST', '/info_news', ['json' => [
             'description' => '',
-            'dateValidite' => '2100-01-01T00:00:00.000Z',
+            'dateValidite' => '1985-09-04T00:00:00.000Z',
             'lienText' => '',
             'lienURL' => null,
             'lienIsTargetBlank' => null,
@@ -96,32 +94,46 @@ class InfoNewsEntityTest extends ApiTestCase
     }
     public function testDeleteInfoNewsMinimal() : void
     {
-        $client = self::createClient();
+        $client = static::createClient();
         // Through the container, you can access all your services from the tests, including the ORM, the mailer, remote API clients...
         $repo = static::getContainer()->get('doctrine')->getRepository(InfoNews::class);
 
-        // Test la création d'une InfoNews
-        $client->request('POST', '/info_news', ['json' => [
-            'description' => '27 Aout 2022 : Journée Portes ouvertes au Dojo. RDV 12h sur le tapis pour un cours d\'essaie.',
-            'dateValidite' => '1985-09-04T00:00:00.000Z',
-            'lienText' => 'LienTextUniquePourTestDelete',
-            'lienURL' => null,
-            'lienIsTargetBlank' => null,
-        ]]);
-        $this->assertResponseStatusCodeSame(201);
-        $this->assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
-        $this->assertMatchesResourceItemJsonSchema(InfoNews::class);
-        
-
-        // Retrouve l'infoNews créée
-        $iri = $this->findIriBy(InfoNews::class, ['lienText' => 'LienTextUniquePourTestDelete']);
-        $InfoN = $repo->findOneBy(['lienText' => 'LienTextUniquePourTestDelete']);
-        $this->assertNotNull($repo->findOneBy(['lienText' => 'LienTextUniquePourTestDelete']));
-
+        // Retrouve l'infoNews
+        $iri = $this->findIriBy(InfoNews::class, ['lienText' => 'LienTextUniquePourTest']);
+        $this->assertNotNull($repo->findOneBy(['lienText' => 'LienTextUniquePourTest']));
         
         // Test la suppression de l'InfoNews
         $client->request('DELETE', $iri);
         $this->assertResponseStatusCodeSame(204);
-        $this->assertNull($repo->findOneBy(['lienText' => 'LienTextUniquePourTestDelete']));        
+        $this->assertNull($repo->findOneBy(['lienText' => 'LienTextUniquePourTest']));        
+    }
+    public function testUpdateInfoNews() : void
+    {
+        $client = static::createClient();
+        // Through the container, you can access all your services from the tests, including the ORM, the mailer, remote API clients...
+        $repo = static::getContainer()->get('doctrine')->getRepository(InfoNews::class);
+
+        // Retrouve l'infoNews
+        $iri = $this->findIriBy(InfoNews::class, ['lienText' => 'LienTextUniquePourTest']);
+        $this->assertNotNull($repo->findOneBy(['lienText' => 'LienTextUniquePourTest']));
+        $client->request('GET', $iri);
+        $this->assertJsonContains([
+            '@id' => $iri,
+            'description' => '27 Aout 2022 : Journée Portes ouvertes au Dojo.',
+            'lienText' => 'LienTextUniquePourTest',
+        ]);
+        
+        // Test la MaJ de l'InfoNews
+        $client->request('PUT', $iri,  ['json' => [
+            'description' => 'Updated Description',
+            'lienURL' => 'www.openjujitsu.test',
+        ]]);
+        $this->assertResponseIsSuccessful();
+        $this->assertJsonContains([
+            '@id' => $iri,
+            'description' => 'Updated Description',
+            'lienText' => 'LienTextUniquePourTest',
+            'lienURL' => 'www.openjujitsu.test',
+        ]);        
     }
 }
