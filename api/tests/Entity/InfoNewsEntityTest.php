@@ -5,11 +5,6 @@ namespace App\Tests\Entity;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
 use Hautelook\AliceBundle\PhpUnit\RefreshDatabaseTrait;
 use App\Entity\InfoNews;
-use Doctrine\SqlFormatter\SqlFormatter;
-use Symfony\Component\Console\Output\OutputInterface;
-// use DateTime;
-// use phpDocumentor\Reflection\Types\Null_;
-// use SebastianBergmann\Environment\Console;
 
 class InfoNewsEntityTest extends ApiTestCase
 {
@@ -30,7 +25,7 @@ class InfoNewsEntityTest extends ApiTestCase
             '@context' => '/contexts/InfoNews',
             '@id' => '/info_news',
             '@type' => 'hydra:Collection',
-            'hydra:totalItems' => 100,
+            'hydra:totalItems' => 101,
             'hydra:view' => [
                 '@id' => '/info_news?page=1',
                 '@type' => 'hydra:PartialCollectionView',

@@ -9,20 +9,27 @@ use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Ramsey\Uuid\Doctrine\UuidGenerator;
 
 #[ORM\Entity(repositoryClass: InfoNewsRepository::class)]
 #[ApiResource]
 class InfoNews
 {
-     #[ORM\Id]
-     #[ORM\GeneratedValue]
-     #[ORM\Column(type:"integer")]
-     #[ApiProperty(identifier:false)]
-    private $id;
+    // #[ORM\Id]
+    // #[ORM\GeneratedValue]
+    // #[ORM\Column(type:"integer")]
+    // #[ApiProperty(identifier:false)]
+    // private $id;
 
     /**
      * The entity "public" ID as UUID pour être utiliser dans l'api.
      */
+    /**
+     * @var \Ramsey\Uuid\UuidInterface
+     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'CUSTOM')]
+    #[ORM\CustomIdGenerator(class: UuidGenerator::class)]
     #[ORM\Column(type: 'uuid', unique: true)]
     #[ApiProperty(identifier:true)]
     private $idInfoNews;
@@ -143,8 +150,8 @@ class InfoNews
     /**
      * Get the value of id
      */ 
-    public function getId()
-    {
-        return $this->id;
-    }
+    // public function getId()
+    // {
+    //     return $this->id;
+    // }
 }
