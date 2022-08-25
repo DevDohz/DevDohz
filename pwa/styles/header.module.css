@@ -1,0 +1,61 @@
+.divHeader {
+  background-image: url("/header-background.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+
+  @apply w-11/12 m-auto max-w-7xl mb-2 max-h-20 md:max-h-36;
+}
+/* ############################ */
+/*          MENUS               */
+/* ############################ */
+.menuImage {
+  @apply opacity-80 active:opacity-100;
+}
+.menuImageActive {
+  @apply opacity-100;
+}
+
+/* ################## */
+/* Menu SiteWeb       */
+.menuItemTop {
+  @apply text-2xl text-ojblack bg-ojwhite bg-opacity-80 active:bg-opacity-100 flex-none hover:text-ojwhite hover:bg-ojblack hover:bg-opacity-80;
+}
+.menuItemTopHover {
+  @apply text-2xl text-ojwhite bg-ojblack bg-opacity-80 flex-none;
+}
+.menuItemTopActive {
+  @apply text-2xl text-ojblack bg-ojwhite bg-opacity-100 flex-none hover:text-ojwhite hover:bg-ojblack hover:bg-opacity-80;
+}
+.menuDivSMenu {
+  @apply flex-col absolute mt-8 bg-ojwhite border-2 rounded-b-md rounded-r-md w-52;
+}
+.menuItemSMenu {
+  @apply block text-2xl rounded-sm bg-opacity-80 px-4 active:bg-opacity-100 text-ojblack hover:text-ojwhite hover:bg-ojblack hover:bg-opacity-80;
+}
+.menuItemSMenuActive {
+  @apply block text-2xl rounded-sm bg-opacity-100 px-4 font-bold text-ojblack hover:text-ojwhite hover:bg-ojblack hover:bg-opacity-80 hover:font-normal;
+}
+
+/* ################## */
+/* Menu Burger mobile */
+.menuBurgerDivMain {
+  @apply self-end w-full md:w-96 max-w-sm bg-ojgreen border-ojgreen border-2 rounded-l-md rounded-b-md bg-opacity-80 backdrop-blur-sm shadow-lg shadow-zinc-700 transition-all ease-out duration-500 origin-left; 
+}
+.divMBSeparator {
+  @apply w-80 border-b-[1px] border-ojblack border-opacity-70;
+}
+.menuBurgerItemTop {
+  @apply flex flex-row relative items-center w-72 px-4 my-px text-2xl text-ojblack bg-opacity-80 rounded-sm fill-ojblack hover:fill-ojwhite hover:text-ojwhite hover:bg-ojblack hover:bg-opacity-80 active:text-ojwhite active:bg-opacity-100;
+}
+.menuBurgerItemTopActive {
+  @apply flex flex-row items-center w-72 px-4 my-px text-2xl text-ojwhite bg-opacity-100 rounded-sm hover:bg-ojblack hover:bg-opacity-80;
+}
+.menuBurgerItemSmenu {
+  @apply flex flex-row items-center w-72 px-8 my-px text-2xl text-ojblack bg-opacity-80 rounded-sm hover:text-ojwhite hover:bg-ojblack hover:bg-opacity-80 active:text-ojwhite active:bg-opacity-100;
+}
+.menuBurgerItemSmenuActive {
+  @apply flex flex-row items-center w-72 px-8 my-px text-2xl text-ojwhite bg-opacity-100 rounded-sm hover:bg-ojblack hover:bg-opacity-80;
+}
+.menuBurgerItemTitreAvecSSmenu {
+  @apply text-2xl text-left;
+}

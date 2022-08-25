@@ -1,0 +1,38 @@
+/* stylelint-disable selector-class-pattern */
+
+/*   News (index)  */
+.title {
+  @apply hidden md:block text-4xl sm:text-5xl text-center;
+}
+
+.divRappels {
+  @apply flex flex-col w-10/12 max-w-6xl mb-2 border-2 border-ojgreen rounded-xl h-fit mx-auto my-4 md:w-fit;
+}
+
+.titreRappels {
+  @apply ml-7 bg-ojwhite -mt-3 px-2 w-fit font-bold;
+}
+
+.lienRappel {
+  @apply underline ml-1 hover:text-ojblack hover:no-underline;
+}
+
+.divSeparateurNews {
+  @apply flex flex-row w-10/12 m-auto max-w-6xl mb-2;
+}
+
+.divNews {
+  @apply flex flex-col lg:flex-row w-10/12 m-auto max-w-6xl mb-2;
+}
+
+.verticalLineGreenSmall {
+  @apply border-solid border-b-2 border-ojgreen w-14 mb-3 flex-none;
+}
+
+.verticalLineGreenLarge {
+  @apply border-solid border-b-2 border-ojgreen w-full mb-3 flex-shrink;
+}
+
+.titreSection {
+  @apply text-2xl bg-ojwhite ml-2 mr-2 flex-none;
+}
