@@ -5,6 +5,7 @@ namespace App\Tests\Entity;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
 use Hautelook\AliceBundle\PhpUnit\RefreshDatabaseTrait;
 use App\Entity\InfoNews;
+use SebastianBergmann\Environment\Console;
 
 class InfoNewsEntityTest extends ApiTestCase
 {
@@ -135,7 +136,7 @@ class InfoNewsEntityTest extends ApiTestCase
     // Test les Filters : sur une date antérieur à + tri ascendant
     public function testGetCollectionByFilterDate(): void
     {        
-        $response = static::createClient()->request('GET', '/info_news?dateValite[after]=2950-09-01&order[dateValite]=asc&lienText=LienTextUniquePourTest');
+        $response = static::createClient()->request('GET', '/info_news?dateValite[after]=2950-09-01&order[dateValite]&lienText=LienTextUniquePourTest');
 
         $this->assertResponseIsSuccessful();
         // Asserts that the returned content type is JSON-LD (the default)
@@ -148,7 +149,7 @@ class InfoNewsEntityTest extends ApiTestCase
             '@type' => 'hydra:Collection',
             'hydra:totalItems' => 5,
             'hydra:view' => [
-                '@id' => '/info_news?dateValite%5Bafter%5D=2950-09-01&order%5BdateValite%5D=asc&lienText=LienTextUniquePourTest',
+                '@id' => '/info_news?dateValite%5Bafter%5D=2950-09-01&order%5BdateValite%5D=&lienText=LienTextUniquePourTest',
                 '@type' => 'hydra:PartialCollectionView',
             ],
         ]);
@@ -157,8 +158,9 @@ class InfoNewsEntityTest extends ApiTestCase
         $this->assertCount(5, $response->toArray()['hydra:member']);
         $this->assertMatchesResourceCollectionJsonSchema(InfoNews::class);
         $tabInfoNews = $response->toArray()['hydra:member'];
+        print_r($tabInfoNews);
         // on s'attend à avoir les dates triées la 4 avant la 5, contrairement au chargement des fixtures
-        $this->assertEquals($tabInfoNews[3]['lienText'], '4LienTextUniquePourTest');        
+        $this->assertEquals($tabInfoNews[3]['lienText'], '4LienTextUniquePourTest');      
     }
 
 }

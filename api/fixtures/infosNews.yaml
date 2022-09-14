@@ -14,20 +14,20 @@ App\Entity\InfoNews:
 
     infoNews_searchFilter:
       description: '14/09/2022 : Description de test pour les filtres.'
-      dateValidite: <dateTime('2022-09-04')>
+      dateValidite: <date_create('2022-09-04')>
       lienText: '2LienTextUniquePourTest'
     
     infoNews_searchFilter2:
-      description: '2050-09-04 : Description de test pour les filtres.'
-      dateValidite: <dateTime('2950-09-04')>
+      description: '2950-09-04 : Description de test pour les filtres.'
+      dateValidite: <date_create('2950-09-04')>
       lienText: '3LienTextUniquePourTest'
          
     infoNews_searchFilter3:
-      description: '2050-09-06 : Description de test pour les filtres.'
-      dateValidite: <dateTime('2950-09-06')>
+      description: '2950-09-06 : Description de test pour les filtres.'
+      dateValidite: <date_create('2950-09-06')>
       lienText: '5LienTextUniquePourTest'
                 
     infoNews_searchFilter4:
-      description: '2050-09-05 : Description de test pour les filtres.'
-      dateValidite: <dateTime('2950-09-05')>
+      description: '2950-09-05 : Description de test pour les filtres.'
+      dateValidite: <date_create('2950-09-05')>
       lienText: '4LienTextUniquePourTest'

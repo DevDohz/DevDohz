@@ -13,11 +13,14 @@ use Ramsey\Uuid\Doctrine\UuidGenerator;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 
 #[ORM\Entity(repositoryClass: InfoNewsRepository::class)]
 #[ApiResource]
 #[ApiFilter(SearchFilter::class, properties: ['idInfoNews' => 'exact', 'dateValidite' => 'partial', 'lienText' => 'partial',])]
 #[ApiFilter(DateFilter::class, properties: ['dateValidite' => DateFilter::EXCLUDE_NULL])]
+// Pour rendre le filtre trier par défaut si pas de précision dans le callApi
+#[ApiFilter(OrderFilter::class, properties: ['dateValidite' => 'ASC'])]
 class InfoNews
 {
     // #[ORM\Id]
