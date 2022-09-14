@@ -10,9 +10,14 @@ use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Ramsey\Uuid\Doctrine\UuidGenerator;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
 
 #[ORM\Entity(repositoryClass: InfoNewsRepository::class)]
 #[ApiResource]
+#[ApiFilter(SearchFilter::class, properties: ['idInfoNews' => 'exact', 'dateValidite' => 'partial', 'lienText' => 'partial',])]
+#[ApiFilter(DateFilter::class, properties: ['dateValidite' => DateFilter::EXCLUDE_NULL])]
 class InfoNews
 {
     // #[ORM\Id]
@@ -42,7 +47,7 @@ class InfoNews
     private $description;
 
     /**
-     * Date de validité : (vide = no limite de temps)
+     * Date de validité :
      */
     #[ORM\Column(type: 'datetime')]
     private $dateValidite;

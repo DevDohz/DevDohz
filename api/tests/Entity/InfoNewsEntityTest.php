@@ -25,7 +25,7 @@ class InfoNewsEntityTest extends ApiTestCase
             '@context' => '/contexts/InfoNews',
             '@id' => '/info_news',
             '@type' => 'hydra:Collection',
-            'hydra:totalItems' => 101,
+            'hydra:totalItems' => 105,
             'hydra:view' => [
                 '@id' => '/info_news?page=1',
                 '@type' => 'hydra:PartialCollectionView',
@@ -131,4 +131,34 @@ class InfoNewsEntityTest extends ApiTestCase
             'lienURL' => 'www.openjujitsu.test',
         ]);        
     }
+
+    // Test les Filters : sur une date antérieur à + tri ascendant
+    public function testGetCollectionByFilterDate(): void
+    {        
+        $response = static::createClient()->request('GET', '/info_news?dateValite[after]=2950-09-01&order[dateValite]=asc&lienText=LienTextUniquePourTest');
+
+        $this->assertResponseIsSuccessful();
+        // Asserts that the returned content type is JSON-LD (the default)
+        $this->assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
+
+        // Asserts that the returned JSON is a superset of this one
+        $this->assertJsonContains([
+            '@context' => '/contexts/InfoNews',
+            '@id' => '/info_news',
+            '@type' => 'hydra:Collection',
+            'hydra:totalItems' => 5,
+            'hydra:view' => [
+                '@id' => '/info_news?dateValite%5Bafter%5D=2950-09-01&order%5BdateValite%5D=asc&lienText=LienTextUniquePourTest',
+                '@type' => 'hydra:PartialCollectionView',
+            ],
+        ]);
+
+        // Because test fixtures are automatically loaded between each test, you can assert on them
+        $this->assertCount(5, $response->toArray()['hydra:member']);
+        $this->assertMatchesResourceCollectionJsonSchema(InfoNews::class);
+        $tabInfoNews = $response->toArray()['hydra:member'];
+        // on s'attend à avoir les dates triées la 4 avant la 5, contrairement au chargement des fixtures
+        $this->assertEquals($tabInfoNews[3]['lienText'], '4LienTextUniquePourTest');        
+    }
+
 }
