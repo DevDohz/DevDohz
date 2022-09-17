@@ -136,31 +136,32 @@ class InfoNewsEntityTest extends ApiTestCase
     // Test les Filters : sur une date antérieur à + tri ascendant
     public function testGetCollectionByFilterDate(): void
     {        
-        $response = static::createClient()->request('GET', '/info_news?dateValite[after]=2950-09-01&order[dateValite]&lienText=LienTextUniquePourTest');
+        $response = static::createClient()->request('GET', '/info_news?dateValidite[after]=2950-09-01&order[dateValidite]&lienText=LienTextUniquePourTest');
 
         $this->assertResponseIsSuccessful();
         // Asserts that the returned content type is JSON-LD (the default)
         $this->assertResponseHeaderSame('content-type', 'application/ld+json; charset=utf-8');
+        print_r($response->toArray()['hydra:member']);
 
         // Asserts that the returned JSON is a superset of this one
         $this->assertJsonContains([
             '@context' => '/contexts/InfoNews',
             '@id' => '/info_news',
             '@type' => 'hydra:Collection',
-            'hydra:totalItems' => 5,
+            'hydra:totalItems' => 3,
             'hydra:view' => [
-                '@id' => '/info_news?dateValite%5Bafter%5D=2950-09-01&order%5BdateValite%5D=&lienText=LienTextUniquePourTest',
+                '@id' => '/info_news?dateValidite%5Bafter%5D=2950-09-01&order%5BdateValidite%5D=&lienText=LienTextUniquePourTest',
                 '@type' => 'hydra:PartialCollectionView',
             ],
         ]);
 
         // Because test fixtures are automatically loaded between each test, you can assert on them
-        $this->assertCount(5, $response->toArray()['hydra:member']);
+        $this->assertCount(3, $response->toArray()['hydra:member']);
         $this->assertMatchesResourceCollectionJsonSchema(InfoNews::class);
         $tabInfoNews = $response->toArray()['hydra:member'];
         print_r($tabInfoNews);
         // on s'attend à avoir les dates triées la 4 avant la 5, contrairement au chargement des fixtures
-        $this->assertEquals($tabInfoNews[3]['lienText'], '4LienTextUniquePourTest');      
+        $this->assertEquals($tabInfoNews[1]['lienText'], '4LienTextUniquePourTest');      
     }
 
 }

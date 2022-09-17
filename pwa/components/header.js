@@ -1,7 +1,7 @@
 import s from '../styles/header.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
-import Menumain from './menumain'
+// import Menumain from './menumain'
 import Image from 'next/image'
 
 export default function Header() {
