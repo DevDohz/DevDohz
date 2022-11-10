@@ -159,7 +159,6 @@ class InfoNewsEntityTest extends ApiTestCase
         $this->assertCount(3, $response->toArray()['hydra:member']);
         $this->assertMatchesResourceCollectionJsonSchema(InfoNews::class);
         $tabInfoNews = $response->toArray()['hydra:member'];
-        print_r($tabInfoNews);
         // on s'attend à avoir les dates triées la 4 avant la 5, contrairement au chargement des fixtures
         $this->assertEquals($tabInfoNews[1]['lienText'], '4LienTextUniquePourTest');      
     }

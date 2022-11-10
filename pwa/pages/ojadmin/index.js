@@ -7,7 +7,7 @@ export default function News() {
       <OJLayout>
           <Head><title>{process.env.NEXT_PUBLIC_SITE_NAME_OJ} - News</title></Head>
         <h1 className={s.title}>
-           Accueil Open Jujitsu
+           Accueil OJ Admin
         </h1>
       </OJLayout>
     );
