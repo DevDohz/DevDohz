@@ -3,6 +3,8 @@
   <a href="https://www.openjujitsu.fr"><img src="/pwa/public/OJ-Logo foncé-250x250.png" alt="Open Jujitsu - Back" \></a>
 </h1>
 
+Open Jujitsu - Back
+
 API Platform is a next-generation web framework designed to easily create API-first projects without compromising extensibility
 and flexibility:
 

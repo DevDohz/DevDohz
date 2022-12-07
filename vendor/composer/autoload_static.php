@@ -19,6 +19,7 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         '3722f872abd441c379baeab7b88038ba' => __DIR__ . '/..' . '/nelmio/alice/src/deep_clone.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '72280e2fa915e603a1f900c17186d14b' => __DIR__ . '/..' . '/api-platform/core/src/deprecation.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -39,9 +40,11 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
             'Symfony\\Contracts\\Cache\\' => 24,
             'Symfony\\Component\\Yaml\\' => 23,
+            'Symfony\\Component\\WebLink\\' => 26,
             'Symfony\\Component\\VarExporter\\' => 30,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\String\\' => 25,
+            'Symfony\\Component\\Serializer\\' => 29,
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\PropertyInfo\\' => 31,
             'Symfony\\Component\\PropertyAccess\\' => 33,
@@ -61,6 +64,7 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Link\\' => 9,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
@@ -68,6 +72,7 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         'N' => 
         array (
             'Nelmio\\Alice\\' => 13,
+            'Negotiation\\' => 12,
         ),
         'H' => 
         array (
@@ -75,6 +80,7 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         ),
         'F' => 
         array (
+            'Fig\\Link\\' => 9,
             'Fidry\\AliceDataFixtures\\' => 24,
             'Faker\\' => 6,
         ),
@@ -95,6 +101,10 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
             'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
             'DeepCopy\\' => 9,
+        ),
+        'A' => 
+        array (
+            'ApiPlatform\\' => 12,
         ),
     );
 
@@ -147,6 +157,10 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
+        'Symfony\\Component\\WebLink\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/web-link',
+        ),
         'Symfony\\Component\\VarExporter\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-exporter',
@@ -158,6 +172,10 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         'Symfony\\Component\\String\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/string',
+        ),
+        'Symfony\\Component\\Serializer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/serializer',
         ),
         'Symfony\\Component\\Routing\\' => 
         array (
@@ -223,6 +241,10 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
+        'Psr\\Link\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/link/src',
+        ),
         'Psr\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
@@ -239,9 +261,17 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         array (
             0 => __DIR__ . '/..' . '/nelmio/alice/src',
         ),
+        'Negotiation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation',
+        ),
         'Hautelook\\AliceBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/hautelook/alice-bundle/src',
+        ),
+        'Fig\\Link\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fig/link-util/src',
         ),
         'Fidry\\AliceDataFixtures\\' => 
         array (
@@ -301,9 +331,9 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
-            1 => __DIR__ . '/..' . '/doctrine/persistence/src/Common',
-            2 => __DIR__ . '/..' . '/doctrine/common/src',
+            0 => __DIR__ . '/..' . '/doctrine/common/src',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
+            2 => __DIR__ . '/..' . '/doctrine/persistence/src/Common',
         ),
         'Doctrine\\Bundle\\DoctrineBundle\\' => 
         array (
@@ -312,6 +342,10 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'ApiPlatform\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/api-platform/core/src',
         ),
     );
 
