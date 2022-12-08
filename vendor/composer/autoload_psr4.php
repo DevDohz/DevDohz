@@ -46,7 +46,6 @@ return array(
     'Nelmio\\Alice\\' => array($vendorDir . '/nelmio/alice/src'),
     'Negotiation\\' => array($vendorDir . '/willdurand/negotiation/src/Negotiation'),
     'Hautelook\\AliceBundle\\' => array($vendorDir . '/hautelook/alice-bundle/src'),
-    'Fig\\Link\\' => array($vendorDir . '/fig/link-util/src'),
     'Fidry\\AliceDataFixtures\\' => array($vendorDir . '/theofidry/alice-data-fixtures/src'),
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
     'Doctrine\\SqlFormatter\\' => array($vendorDir . '/doctrine/sql-formatter/src'),

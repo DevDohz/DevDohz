@@ -80,7 +80,6 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         ),
         'F' => 
         array (
-            'Fig\\Link\\' => 9,
             'Fidry\\AliceDataFixtures\\' => 24,
             'Faker\\' => 6,
         ),
@@ -268,10 +267,6 @@ class ComposerStaticInit95efffe0758ece14819272ae1b328a97
         'Hautelook\\AliceBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/hautelook/alice-bundle/src',
-        ),
-        'Fig\\Link\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fig/link-util/src',
         ),
         'Fidry\\AliceDataFixtures\\' => 
         array (

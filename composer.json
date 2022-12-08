@@ -1,7 +1,7 @@
 {
     "require": {
         "symfony/apache-pack": "^1.0",
-        "api-platform/core": "2.7"
+        "api-platform/core": "^2.7"
     },
     "require-dev": {
         "nelmio/alice": "^3.10",

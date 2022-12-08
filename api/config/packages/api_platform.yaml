@@ -15,4 +15,4 @@ api_platform:
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
     # to use the new metadata system
-    metadata_backward_compatibility_layer: true
+    metadata_backward_compatibility_layer: false

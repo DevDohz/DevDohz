@@ -2,25 +2,25 @@
     "packages": [
         {
             "name": "api-platform/core",
-            "version": "v2.7.0",
-            "version_normalized": "2.7.0.0",
+            "version": "v2.7.5",
+            "version_normalized": "2.7.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/core.git",
-                "reference": "d3f5fb8a1e5de4d516c3407b71e592e26efdca05"
+                "reference": "b670958db633d66b05bc46ff34c3bb7c1b306c70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/core/zipball/d3f5fb8a1e5de4d516c3407b71e592e26efdca05",
-                "reference": "d3f5fb8a1e5de4d516c3407b71e592e26efdca05",
+                "url": "https://api.github.com/repos/api-platform/core/zipball/b670958db633d66b05bc46ff34c3bb7c1b306c70",
+                "reference": "b670958db633d66b05bc46ff34c3bb7c1b306c70",
                 "shasum": ""
             },
             "require": {
                 "doctrine/inflector": "^1.0 || ^2.0",
-                "fig/link-util": "^1.0",
                 "php": ">=7.1",
                 "psr/cache": "^1.0 || ^2.0 || ^3.0",
                 "psr/container": "^1.0 || ^2.0",
+                "symfony/deprecation-contracts": "^2.1 || ^3.0",
                 "symfony/http-foundation": "^4.4 || ^5.1 || ^6.0",
                 "symfony/http-kernel": "^4.4 || ^5.1 || ^6.0",
                 "symfony/property-access": "^3.4.19 || ^4.4 || ^5.1 || ^6.0",
@@ -33,7 +33,8 @@
                 "doctrine/common": "<2.7",
                 "doctrine/dbal": "<2.10",
                 "doctrine/mongodb-odm": "<2.2",
-                "doctrine/persistence": "<1.3"
+                "doctrine/persistence": "<1.3",
+                "elasticsearch/elasticsearch": ">=8.0"
             },
             "require-dev": {
                 "behat/behat": "^3.1",
@@ -116,7 +117,7 @@
                 "symfony/web-profiler-bundle": "To use the data collector.",
                 "webonyx/graphql-php": "To support GraphQL."
             },
-            "time": "2022-09-13T07:22:50+00:00",
+            "time": "2022-11-25T08:03:09+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -161,7 +162,7 @@
             ],
             "support": {
                 "issues": "https://github.com/api-platform/core/issues",
-                "source": "https://github.com/api-platform/core/tree/v2.7.0"
+                "source": "https://github.com/api-platform/core/tree/v2.7.5"
             },
             "funding": [
                 {
@@ -757,17 +758,17 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "2.7.1",
-            "version_normalized": "2.7.1.0",
+            "version": "2.7.2",
+            "version_normalized": "2.7.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "a2dcad48741c9d12fd6040398cf075025030096e"
+                "reference": "22d53b2c5ad03929628fb4a928b01135585b7179"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/a2dcad48741c9d12fd6040398cf075025030096e",
-                "reference": "a2dcad48741c9d12fd6040398cf075025030096e",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/22d53b2c5ad03929628fb4a928b01135585b7179",
+                "reference": "22d53b2c5ad03929628fb4a928b01135585b7179",
                 "shasum": ""
             },
             "require": {
@@ -814,7 +815,7 @@
                 "ext-pdo": "*",
                 "symfony/web-profiler-bundle": "To use the data collector."
             },
-            "time": "2022-10-23T09:47:06+00:00",
+            "time": "2022-12-07T12:07:11+00:00",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -854,7 +855,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineBundle/issues",
-                "source": "https://github.com/doctrine/DoctrineBundle/tree/2.7.1"
+                "source": "https://github.com/doctrine/DoctrineBundle/tree/2.7.2"
             },
             "funding": [
                 {
@@ -1215,17 +1216,17 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "2.13.3",
-            "version_normalized": "2.13.3.0",
+            "version": "2.13.4",
+            "version_normalized": "2.13.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "e750360bd52b080c4cbaaee1b48b80f7dc873b36"
+                "reference": "a5a6cc6630ce497290396d5f206887227820a634"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/e750360bd52b080c4cbaaee1b48b80f7dc873b36",
-                "reference": "e750360bd52b080c4cbaaee1b48b80f7dc873b36",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/a5a6cc6630ce497290396d5f206887227820a634",
+                "reference": "a5a6cc6630ce497290396d5f206887227820a634",
                 "shasum": ""
             },
             "require": {
@@ -1254,20 +1255,20 @@
                 "doctrine/annotations": "^1.13",
                 "doctrine/coding-standard": "^9.0.2 || ^10.0",
                 "phpbench/phpbench": "^0.16.10 || ^1.0",
-                "phpstan/phpstan": "~1.4.10 || 1.8.5",
+                "phpstan/phpstan": "~1.4.10 || 1.9.2",
                 "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
                 "psr/log": "^1 || ^2 || ^3",
                 "squizlabs/php_codesniffer": "3.7.1",
                 "symfony/cache": "^4.4 || ^5.4 || ^6.0",
                 "symfony/yaml": "^3.4 || ^4.0 || ^5.0 || ^6.0",
-                "vimeo/psalm": "4.27.0"
+                "vimeo/psalm": "4.30.0"
             },
             "suggest": {
                 "ext-dom": "Provides support for XSD validation for XML mapping files",
                 "symfony/cache": "Provides cache support for Setup Tool with doctrine/cache 2.0",
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "2022-10-07T06:37:17+00:00",
+            "time": "2022-11-20T18:53:31+00:00",
             "bin": [
                 "bin/doctrine"
             ],
@@ -1312,7 +1313,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/orm/issues",
-                "source": "https://github.com/doctrine/orm/tree/2.13.3"
+                "source": "https://github.com/doctrine/orm/tree/2.13.4"
             },
             "install-path": "../doctrine/orm"
         },
@@ -1545,70 +1546,6 @@
                 "source": "https://github.com/FakerPHP/Faker/tree/v1.20.0"
             },
             "install-path": "../fakerphp/faker"
-        },
-        {
-            "name": "fig/link-util",
-            "version": "1.2.0",
-            "version_normalized": "1.2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/link-util.git",
-                "reference": "10e52348a2e9ad4581f2bf3e16458f0861a88c6a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/link-util/zipball/10e52348a2e9ad4581f2bf3e16458f0861a88c6a",
-                "reference": "10e52348a2e9ad4581f2bf3e16458f0861a88c6a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.0.0",
-                "psr/link": "^1.1.0 | ^2.0.0"
-            },
-            "provide": {
-                "psr/link-implementation": "1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9",
-                "squizlabs/php_codesniffer": "^2.3.1"
-            },
-            "time": "2021-03-11T23:09:19+00:00",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Fig\\Link\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
-                }
-            ],
-            "description": "Common utility implementations for HTTP links",
-            "keywords": [
-                "http",
-                "http-link",
-                "link",
-                "psr",
-                "psr-13",
-                "rest"
-            ],
-            "support": {
-                "issues": "https://github.com/php-fig/link-util/issues",
-                "source": "https://github.com/php-fig/link-util/tree/1.2.0"
-            },
-            "install-path": "../fig/link-util"
         },
         {
             "name": "hautelook/alice-bundle",
@@ -2442,17 +2379,17 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v6.0.15",
-            "version_normalized": "6.0.15.0",
+            "version": "v6.0.16",
+            "version_normalized": "6.0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "370ca602748b77f63a474da397afc2fb66e37319"
+                "reference": "40cd2323c219e30292c0e2520572b54310e534c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/370ca602748b77f63a474da397afc2fb66e37319",
-                "reference": "370ca602748b77f63a474da397afc2fb66e37319",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/40cd2323c219e30292c0e2520572b54310e534c6",
+                "reference": "40cd2323c219e30292c0e2520572b54310e534c6",
                 "shasum": ""
             },
             "require": {
@@ -2486,7 +2423,7 @@
                 "symfony/messenger": "^5.4|^6.0",
                 "symfony/var-dumper": "^5.4|^6.0"
             },
-            "time": "2022-10-28T16:22:58+00:00",
+            "time": "2022-11-07T17:51:53+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -2518,7 +2455,7 @@
                 "psr6"
             ],
             "support": {
-                "source": "https://github.com/symfony/cache/tree/v6.0.15"
+                "source": "https://github.com/symfony/cache/tree/v6.0.16"
             },
             "funding": [
                 {
@@ -2701,17 +2638,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v6.0.15",
-            "version_normalized": "6.0.15.0",
+            "version": "v6.0.16",
+            "version_normalized": "6.0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "b0b910724a0a0326b4481e4f8a30abb2dd442efb"
+                "reference": "be294423f337dda97c810733138c0caec1bb0575"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/b0b910724a0a0326b4481e4f8a30abb2dd442efb",
-                "reference": "b0b910724a0a0326b4481e4f8a30abb2dd442efb",
+                "url": "https://api.github.com/repos/symfony/console/zipball/be294423f337dda97c810733138c0caec1bb0575",
+                "reference": "be294423f337dda97c810733138c0caec1bb0575",
                 "shasum": ""
             },
             "require": {
@@ -2745,7 +2682,7 @@
                 "symfony/lock": "",
                 "symfony/process": ""
             },
-            "time": "2022-10-26T21:42:20+00:00",
+            "time": "2022-11-25T18:58:46+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -2779,7 +2716,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v6.0.15"
+                "source": "https://github.com/symfony/console/tree/v6.0.16"
             },
             "funding": [
                 {
@@ -2799,17 +2736,17 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v6.0.13",
-            "version_normalized": "6.0.13.0",
+            "version": "v6.0.16",
+            "version_normalized": "6.0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "6339881a2970b9f6bf6f4d2b07a540b4e3740f98"
+                "reference": "2140291b9aface8d1d53299123fcffd1e0782b43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/6339881a2970b9f6bf6f4d2b07a540b4e3740f98",
-                "reference": "6339881a2970b9f6bf6f4d2b07a540b4e3740f98",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/2140291b9aface8d1d53299123fcffd1e0782b43",
+                "reference": "2140291b9aface8d1d53299123fcffd1e0782b43",
                 "shasum": ""
             },
             "require": {
@@ -2842,7 +2779,7 @@
                 "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
                 "symfony/yaml": ""
             },
-            "time": "2022-09-28T16:00:20+00:00",
+            "time": "2022-11-25T07:33:41+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -2870,7 +2807,7 @@
             "description": "Allows you to standardize and centralize the way objects are constructed in your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dependency-injection/tree/v6.0.13"
+                "source": "https://github.com/symfony/dependency-injection/tree/v6.0.16"
             },
             "funding": [
                 {
@@ -2960,17 +2897,17 @@
         },
         {
             "name": "symfony/doctrine-bridge",
-            "version": "v6.0.15",
-            "version_normalized": "6.0.15.0",
+            "version": "v6.0.16",
+            "version_normalized": "6.0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/doctrine-bridge.git",
-                "reference": "338fa35c3afa0cd76395449935094c59d45e334b"
+                "reference": "7405ac7b8088757aaade12ae1cfc60071441b3d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/doctrine-bridge/zipball/338fa35c3afa0cd76395449935094c59d45e334b",
-                "reference": "338fa35c3afa0cd76395449935094c59d45e334b",
+                "url": "https://api.github.com/repos/symfony/doctrine-bridge/zipball/7405ac7b8088757aaade12ae1cfc60071441b3d7",
+                "reference": "7405ac7b8088757aaade12ae1cfc60071441b3d7",
                 "shasum": ""
             },
             "require": {
@@ -2999,7 +2936,7 @@
             },
             "require-dev": {
                 "doctrine/annotations": "^1.10.4",
-                "doctrine/collections": "~1.0",
+                "doctrine/collections": "^1.0|^2.0",
                 "doctrine/data-fixtures": "^1.1",
                 "doctrine/dbal": "^2.13.1|^3.0",
                 "doctrine/orm": "^2.7.4",
@@ -3030,7 +2967,7 @@
                 "symfony/property-info": "",
                 "symfony/validator": ""
             },
-            "time": "2022-10-14T11:29:08+00:00",
+            "time": "2022-11-28T12:25:56+00:00",
             "type": "symfony-bridge",
             "installation-source": "dist",
             "autoload": {
@@ -3058,7 +2995,7 @@
             "description": "Provides integration for Doctrine with various Symfony components",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/doctrine-bridge/tree/v6.0.15"
+                "source": "https://github.com/symfony/doctrine-bridge/tree/v6.0.16"
             },
             "funding": [
                 {
@@ -3450,17 +3387,17 @@
         },
         {
             "name": "symfony/framework-bundle",
-            "version": "v6.0.15",
-            "version_normalized": "6.0.15.0",
+            "version": "v6.0.16",
+            "version_normalized": "6.0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/framework-bundle.git",
-                "reference": "fac20dc3eb266c7227cef31670f090e65442129f"
+                "reference": "ac099ef8dba62fd58d9824438b144fa4afce86d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/fac20dc3eb266c7227cef31670f090e65442129f",
-                "reference": "fac20dc3eb266c7227cef31670f090e65442129f",
+                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/ac099ef8dba62fd58d9824438b144fa4afce86d8",
+                "reference": "ac099ef8dba62fd58d9824438b144fa4afce86d8",
                 "shasum": ""
             },
             "require": {
@@ -3553,7 +3490,7 @@
                 "symfony/web-link": "For using web links, features such as preloading, prefetching or prerendering",
                 "symfony/yaml": "For using the debug:config and lint:yaml commands"
             },
-            "time": "2022-10-26T20:57:43+00:00",
+            "time": "2022-11-25T18:58:46+00:00",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -3581,7 +3518,7 @@
             "description": "Provides a tight integration between Symfony components and the Symfony full-stack framework",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/framework-bundle/tree/v6.0.15"
+                "source": "https://github.com/symfony/framework-bundle/tree/v6.0.16"
             },
             "funding": [
                 {
@@ -3601,17 +3538,17 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v6.0.15",
-            "version_normalized": "6.0.15.0",
+            "version": "v6.0.16",
+            "version_normalized": "6.0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "a93829f4043fdcddebabd8433bdb46c2dcaefe06"
+                "reference": "86eec2c66d00a2dd03d84352cd10b12df73101ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/a93829f4043fdcddebabd8433bdb46c2dcaefe06",
-                "reference": "a93829f4043fdcddebabd8433bdb46c2dcaefe06",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/86eec2c66d00a2dd03d84352cd10b12df73101ec",
+                "reference": "86eec2c66d00a2dd03d84352cd10b12df73101ec",
                 "shasum": ""
             },
             "require": {
@@ -3631,7 +3568,7 @@
             "suggest": {
                 "symfony/mime": "To use the file extension guesser"
             },
-            "time": "2022-10-12T09:44:26+00:00",
+            "time": "2022-11-07T08:07:05+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -3659,7 +3596,7 @@
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-foundation/tree/v6.0.15"
+                "source": "https://github.com/symfony/http-foundation/tree/v6.0.16"
             },
             "funding": [
                 {
@@ -3679,17 +3616,17 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v6.0.15",
-            "version_normalized": "6.0.15.0",
+            "version": "v6.0.16",
+            "version_normalized": "6.0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "22c820abe601e7328b56cec86626617139266f48"
+                "reference": "8ba1344821807ad51f230f0d01e0fa8f366e4abb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/22c820abe601e7328b56cec86626617139266f48",
-                "reference": "22c820abe601e7328b56cec86626617139266f48",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/8ba1344821807ad51f230f0d01e0fa8f366e4abb",
+                "reference": "8ba1344821807ad51f230f0d01e0fa8f366e4abb",
                 "shasum": ""
             },
             "require": {
@@ -3743,7 +3680,7 @@
                 "symfony/console": "",
                 "symfony/dependency-injection": ""
             },
-            "time": "2022-10-28T18:00:40+00:00",
+            "time": "2022-11-28T18:15:44+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -3771,7 +3708,7 @@
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-kernel/tree/v6.0.15"
+                "source": "https://github.com/symfony/http-kernel/tree/v6.0.16"
             },
             "funding": [
                 {
@@ -4462,17 +4399,17 @@
         },
         {
             "name": "symfony/property-info",
-            "version": "v6.0.15",
-            "version_normalized": "6.0.15.0",
+            "version": "v6.0.16",
+            "version_normalized": "6.0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-info.git",
-                "reference": "5f9f1e51e79c6e4968c711557c1589bae2907863"
+                "reference": "5124bab2d32d521c592159bd4d13235fa3da0fe7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-info/zipball/5f9f1e51e79c6e4968c711557c1589bae2907863",
-                "reference": "5f9f1e51e79c6e4968c711557c1589bae2907863",
+                "url": "https://api.github.com/repos/symfony/property-info/zipball/5124bab2d32d521c592159bd4d13235fa3da0fe7",
+                "reference": "5124bab2d32d521c592159bd4d13235fa3da0fe7",
                 "shasum": ""
             },
             "require": {
@@ -4498,7 +4435,7 @@
                 "symfony/doctrine-bridge": "To use Doctrine metadata",
                 "symfony/serializer": "To use Serializer metadata"
             },
-            "time": "2022-10-28T16:22:58+00:00",
+            "time": "2022-11-25T07:33:41+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -4534,7 +4471,7 @@
                 "validator"
             ],
             "support": {
-                "source": "https://github.com/symfony/property-info/tree/v6.0.15"
+                "source": "https://github.com/symfony/property-info/tree/v6.0.16"
             },
             "funding": [
                 {
@@ -5177,17 +5114,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v6.0.14",
-            "version_normalized": "6.0.14.0",
+            "version": "v6.0.16",
+            "version_normalized": "6.0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "e65020d137ad54beb85a67ffe6435e980f35ccf3"
+                "reference": "eb85bd1b0b297e976f3ada52ad239ef80b4dbd0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/e65020d137ad54beb85a67ffe6435e980f35ccf3",
-                "reference": "e65020d137ad54beb85a67ffe6435e980f35ccf3",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/eb85bd1b0b297e976f3ada52ad239ef80b4dbd0b",
+                "reference": "eb85bd1b0b297e976f3ada52ad239ef80b4dbd0b",
                 "shasum": ""
             },
             "require": {
@@ -5203,7 +5140,7 @@
             "suggest": {
                 "symfony/console": "For validating YAML files using the lint command"
             },
-            "time": "2022-10-07T08:02:12+00:00",
+            "time": "2022-11-25T18:58:46+00:00",
             "bin": [
                 "Resources/bin/yaml-lint"
             ],
@@ -5234,7 +5171,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v6.0.14"
+                "source": "https://github.com/symfony/yaml/tree/v6.0.16"
             },
             "funding": [
                 {
