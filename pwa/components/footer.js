@@ -24,7 +24,6 @@ export default function Footer() {
         </div>
 
         {/* Menu simple espacé */}
-        {/* <div className="hidden sm:flex sm:flex-grow space-x-4 self-center place-content-center " > */}
         <div className="flex flex-grow space-x-4 self-center place-content-center " >
           <Link href="/contact">
             <a className={s.myLink}>Contact</a>
@@ -44,7 +43,6 @@ export default function Footer() {
         {/* Info réccap OJ */}
         <div className="hidden md:flex sm:flex-col mr-0 text-center">
           <p className="text-xl"><span className="font-bold">Open</span> <span className="text-ojgreen">Jujitsu</span></p>
-          {/* <p>contact<span className="text-ojgreen">@</span>openjujitsu<span className="text-ojgreen">.</span>fr</p> */}
           <p>51 avenue de Madran, 33600 Pessac</p>
           <p>05 56 36 94 49</p>
         </div>      
