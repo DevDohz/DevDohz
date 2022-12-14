@@ -1,12 +1,6 @@
 api_platform:
-    title: Hello OJ API Platform
+    title: Hello API Platform
     version: 1.0.0
-    mapping:
-        paths: ['%kernel.project_dir%/src/Entity']
-    patch_formats:
-        json: ['application/merge-patch+json']
-    swagger:
-        versions: [3]
     # Mercure integration, remove if unwanted
     mercure: ~
     # Good cache defaults for REST APIs
@@ -14,13 +8,3 @@ api_platform:
         stateless: true
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
-    # to use the new metadata system
-    metadata_backward_compatibility_layer: false
-    http_cache:
-        invalidation:
-            enabled: true
-            varnish_urls: ['%env(VARNISH_URL)%']
-        max_age: 0
-        shared_max_age: 3600
-        vary: ['Content-Type', 'Authorization', 'Origin']
-        public: true

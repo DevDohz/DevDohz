@@ -2,10 +2,9 @@
 
 namespace App\Tests\Entity;
 
-use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
+use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
 use Hautelook\AliceBundle\PhpUnit\RefreshDatabaseTrait;
 use App\Entity\InfoNews;
-use SebastianBergmann\Environment\Console;
 
 class InfoNewsEntityTest extends ApiTestCase
 {

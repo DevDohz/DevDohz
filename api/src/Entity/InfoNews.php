@@ -2,33 +2,27 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiProperty;
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\ApiProperty;
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\InfoNewsRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Ramsey\Uuid\Doctrine\UuidGenerator;
-use ApiPlatform\Core\Annotation\ApiFilter;
-use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
-use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
-use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Doctrine\Orm\Filter\DateFilter;
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 
 #[ORM\Entity(repositoryClass: InfoNewsRepository::class)]
-#[ApiResource]
+#[ApiResource(mercure: true)]
 #[ApiFilter(SearchFilter::class, properties: ['idInfoNews' => 'exact', 'dateValidite' => 'partial', 'lienText' => 'partial',])]
 #[ApiFilter(DateFilter::class, properties: ['dateValidite' => DateFilter::EXCLUDE_NULL])]
 // Pour rendre le filtre trier par défaut si pas de précision dans le callApi
 #[ApiFilter(OrderFilter::class, properties: ['dateValidite' => 'ASC'])]
 class InfoNews
 {
-    // #[ORM\Id]
-    // #[ORM\GeneratedValue]
-    // #[ORM\Column(type:"integer")]
-    // #[ApiProperty(identifier:false)]
-    // private $id;
-
     /**
      * The entity "public" ID as UUID pour être utiliser dans l'api.
      */
@@ -58,7 +52,7 @@ class InfoNews
     /**
      * Text du Lien
      */
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[ORM\Column(type: 'string', length:255, nullable: true)]
     private $lienText;
     
     /**
@@ -155,11 +149,4 @@ class InfoNews
         return $this;
     }
 
-    /**
-     * Get the value of id
-     */ 
-    // public function getId()
-    // {
-    //     return $this->id;
-    // }
 }

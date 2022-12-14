@@ -1,9 +1,0 @@
-{
-    "require": {
-        "api-platform/core": "^2.7"
-    },
-    "require-dev": {
-        "nelmio/alice": "^3.10",
-        "hautelook/alice-bundle": "^2.10"
-    }
-}
